@@ -4,12 +4,12 @@ meta: (( merge ))
 name: (( merge ))
 director_uuid: (( merge ))
 releases:
-  - name: datadog-firehose-nozzle
+  - name: opentsdb-firehose-nozzle
     version: latest
 
 compilation:
   workers: (( merge ))
-  network: datadog-firehose-nozzle-net
+  network: opentsdb-firehose-nozzle-net
   reuse_compilation_vms: true
   cloud_properties: (( merge ))
 
@@ -21,29 +21,29 @@ update:
   max_errors: 1
 
 networks:
-- name: datadog-firehose-nozzle-net
+- name: opentsdb-firehose-nozzle-net
   subnets: (( merge ))
 
 resource_pools:
-- name: datadog-firehose-nozzle
-  network: datadog-firehose-nozzle-net
+- name: opentsdb-firehose-nozzle
+  network: opentsdb-firehose-nozzle-net
   stemcell: (( meta.stemcell ))
   size: (( merge ))
   cloud_properties: (( merge ))
 
 jobs:
-- name: datadog-firehose-nozzle
+- name: opentsdb-firehose-nozzle
   memory_mb: 2048
   templates:
-    - {name: datadog-firehose-nozzle, release: datadog-firehose-nozzle}
+    - {name: opentsdb-firehose-nozzle, release: opentsdb-firehose-nozzle}
   instances: (( merge ))
-  resource_pool: datadog-firehose-nozzle
+  resource_pool: opentsdb-firehose-nozzle
   networks: (( merge ))
 
 properties:
   loggregator:
     traffic_controller_url: (( merge ))
-  datadog:
+  opentsdb:
     api_url: (( merge ))
     api_key: (( merge ))
     flush_duration_seconds: (( merge ))
