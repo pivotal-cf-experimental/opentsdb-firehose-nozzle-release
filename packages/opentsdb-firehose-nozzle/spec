@@ -1,0 +1,8 @@
+---
+name: opentsdb-firehose-nozzle
+
+dependencies:
+- golang1.4
+
+files:
+- opentsdb-firehose-nozzle/**/*

@@ -17,7 +17,7 @@ mkdir -p tmp
 MANIFEST_FILE_TMP=/tmp/manifest_stub_tmp.yml
 
 BOSH_RELEASES_DIR=${BOSH_RELEASES_DIR:-~/workspace}
-RELEASE_DIR=${RELEASE_DIR:-$BOSH_RELEASES_DIR/datadog-firehose-nozzle-release}
+RELEASE_DIR=${RELEASE_DIR:-$BOSH_RELEASES_DIR/opentsdb-firehose-nozzle-release}
 
 DEPLOYMENT_FILE=`basename $DEPLOYMENT`
 DEPLOYMENT_ENV=`basename $(dirname $DEPLOYMENT)`
@@ -34,7 +34,7 @@ DIRECTOR_UUID=$(bosh status | grep UUID | awk '{print $2}')
 echo "Director UUID: $DIRECTOR_UUID"
 perl -pi -e "s/PLACEHOLDER-DIRECTOR-UUID/$DIRECTOR_UUID/g" $MANIFEST_FILE_TMP
 
-spiff merge $RELEASE_DIR/templates/datadog-firehose-nozzle-template.yml $MANIFEST_FILE_TMP > $MANIFEST_FILE
+spiff merge $RELEASE_DIR/templates/opentsdb-firehose-nozzle-template.yml $MANIFEST_FILE_TMP > $MANIFEST_FILE
 
 rm $MANIFEST_FILE_TMP
 

@@ -1,0 +1,5 @@
+check process opentsdb-firehose-nozzle
+  with pidfile /var/vcap/sys/run/opentsdb-firehose-nozzle/opentsdb-firehose-nozzle.pid
+  start program "/var/vcap/jobs/opentsdb-firehose-nozzle/bin/opentsdb-firehose-nozzle-ctl start"
+  stop program "/var/vcap/jobs/opentsdb-firehose-nozzle/bin/opentsdb-firehose-nozzle-ctl stop"
+  group vcap

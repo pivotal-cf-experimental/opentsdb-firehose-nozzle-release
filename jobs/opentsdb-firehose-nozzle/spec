@@ -1,0 +1,33 @@
+---
+name: opentsdb-firehose-nozzle
+templates:
+  opentsdb-firehose-nozzle-ctl.erb: bin/opentsdb-firehose-nozzle-ctl
+  opentsdb-firehose-nozzle.json.erb: config/opentsdb-firehose-nozzle.json
+
+packages:
+- opentsdb-firehose-nozzle
+
+properties:
+  loggregator.traffic_controller_url:
+    description: "Traffic controller URL"
+  opentsdb.api_url:
+    description: "The REST API Endpoint for opentsdb"
+    default: "http://localhost"
+  opentsdb.flush_duration_seconds:
+    description: "The duration in seconds between flushes to opentsdb"
+    default: 15
+  opentsdb.metric_prefix:
+    description: "Text which will be prepended to each metric name submitted to opentsdb"
+    default: "opentsdb.nozzle."
+  opentsdb.deployment:
+    description: "Name of deployment (added as tag on all outgoing metrics)"
+  uaa.url:
+    description: "URL for the UAA server"
+  uaa.username:
+    description: "The user who has access to the loggregator firehose"
+  uaa.password:
+    description: "The password for the user"
+  nozzle.insecure_ssl_skip_verify:
+    description: "Skip verifying SSL certificate"
+  nozzle.subscription_id:
+    description: "The subscription id to be used for the firehose"
