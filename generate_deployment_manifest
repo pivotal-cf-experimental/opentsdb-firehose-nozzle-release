@@ -1,0 +1,19 @@
+#!/bin/sh
+
+templates=$(dirname $0)/templates
+
+infrastructure=$1
+
+shift
+
+if [ "$infrastructure" != "aws" ] && \
+    [ "$infrastructure" != "warden" ] ; then
+  echo "usage: ./generate_deployment_manifest <aws|warden> [stubs...]"
+  exit 1
+fi
+
+spiff merge \
+  $templates/opentsdb-firehose-nozzle-deployment.yml \
+  $templates/opentsdb-firehose-nozzle-jobs.yml \
+  $templates/opentsdb-firehose-nozzle-infrastructure-${infrastructure}.yml \
+  "$@"

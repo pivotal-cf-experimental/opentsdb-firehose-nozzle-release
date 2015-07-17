@@ -19,8 +19,6 @@ properties:
   opentsdb.metric_prefix:
     description: "Text which will be prepended to each metric name submitted to opentsdb"
     default: "opentsdb.nozzle."
-  opentsdb.deployment:
-    description: "Name of deployment (added as tag on all outgoing metrics)"
   uaa.url:
     description: "URL for the UAA server"
   uaa.username:

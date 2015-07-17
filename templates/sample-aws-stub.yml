@@ -1,0 +1,40 @@
+---
+meta:
+  availability_zone: ap-northeast-1a 
+
+name: XXXX 
+director_uuid: XXXX
+
+networks:
+- name: default
+  subnets:
+  - range: 10.10.51.0/24
+    reserved:
+    - 10.10.51.2 - 10.10.51.9
+    static:
+    - 10.10.51.10 - 10.10.51.20
+    gateway: 10.10.51.1
+    dns:
+    - 10.10.0.2
+    cloud_properties:
+      security_groups:
+      - cf
+      subnet: subnet-xxxxx
+
+properties:
+  loggregator:
+    traffic_controller_url: wss://doppler.XXX.com:4443
+
+  opentsdb:
+    api_url: http://opentsdb.XXX.com/api
+    flush_duration_seconds: 15
+    metric_prefix: opentsdb.nozzle.
+
+  uaa:
+    url: https://uaa.XXX.com
+    username: xxx
+    password: xxx
+  
+  nozzle:
+    insecure_ssl_skip_verify: true
+    subscription_id: opentsdb-nozzle

@@ -1,0 +1,19 @@
+---
+meta: (( merge ))
+networks: (( merge ))
+name: (( merge ))
+
+properties:
+  <<: (( merge ))
+
+jobs:
+- name: opentsdb-firehose-nozzle 
+  templates:
+    - name: opentsdb-firehose-nozzle 
+      release: opentsdb-firehose-nozzle 
+  instances: 2 
+  resource_pool: large 
+  networks:
+    - name: default 
+      default: [dns, gateway]
+  persistent_disk: 409600
