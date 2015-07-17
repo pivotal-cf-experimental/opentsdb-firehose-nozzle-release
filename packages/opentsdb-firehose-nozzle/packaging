@@ -7,5 +7,5 @@ cd opentsdb-firehose-nozzle
 
 export GOPATH=$PWD
 
-go install github.com/pivotal-cloudops/opentsdb-firehose-nozzle-release
+go install github.com/pivotal-cloudops/opentsdb-firehose-nozzle
 cp -a $PWD/bin/opentsdb-firehose-nozzle ${BOSH_INSTALL_TARGET}
