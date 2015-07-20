@@ -15,7 +15,7 @@ properties:
     default: "http://localhost"
   opentsdb.flush_duration_seconds:
     description: "The duration in seconds between flushes to opentsdb"
-    default: 15
+    default: 2
   opentsdb.metric_prefix:
     description: "Text which will be prepended to each metric name submitted to opentsdb"
     default: "opentsdb.nozzle."
