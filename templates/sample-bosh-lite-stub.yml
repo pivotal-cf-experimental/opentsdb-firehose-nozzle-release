@@ -1,0 +1,56 @@
+---
+meta:
+  availability_zone: zone1
+
+name: opentsdb-nozzle
+director_uuid: ea33eb06-8878-419e-9177-c46c713d2f94
+
+networks:
+- name: default
+  subnets:
+  - cloud_properties:
+      name: random
+    range: 10.244.1.0/30
+    reserved:
+    - 10.244.1.1
+    static:
+    - 10.244.1.2
+  - cloud_properties:
+      name: random
+    range: 10.244.1.4/30
+    reserved:
+    - 10.244.1.5
+    static:
+    - 10.244.1.6
+  - cloud_properties:
+      name: random
+    range: 10.244.1.8/30
+    reserved:
+    - 10.244.1.9
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.1.12/30
+    reserved:
+    - 10.244.1.13
+    static: []
+
+properties:
+  loggregator:
+    traffic_controller_url: wss://doppler.10.244.0.34.xip.io:4443
+
+  opentsdb:
+    api_url: 10.73.0.26:13321
+    flush_duration_seconds: 15
+    metric_prefix: opentsdb.nozzle.
+    use_telnet_api: true
+    max_buffer_size: 50
+
+  uaa:
+    url: https://uaa.10.244.0.34.xip.io
+    username: opentsdb-firehose-nozzle
+    password: admin
+
+  nozzle:
+    insecure_ssl_skip_verify: true
+    subscription_id: opentsdb-nozzle
