@@ -1,0 +1,25 @@
+---
+meta:
+  <<: (( merge ))
+  stemcell:
+    name: bosh-warden-boshlite-ubuntu-trusty-go_agent
+    version: latest
+  availability_zone: (( merge ))
+
+jobs:
+  - name: opentsdb-firehose-nozzle
+    instances: 1
+    networks:
+      - name: default
+        static_ips: (( static_ips(0) ))
+
+compilation:
+  cloud_properties:
+    instance_type: m1.large
+
+resource_pools:
+  - name: large
+    cloud_properties:
+      name: random
+
+networks: (( merge ))

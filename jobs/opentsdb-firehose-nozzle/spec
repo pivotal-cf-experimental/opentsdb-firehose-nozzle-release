@@ -16,9 +16,15 @@ properties:
   opentsdb.flush_duration_seconds:
     description: "The duration in seconds between flushes to opentsdb"
     default: 2
+  opentsdb.max_buffer_size:
+    description: "If the number of buffered metrics exceeds the max buffer size, the metrics will be flushed even if flush duration didn't trigger yet"
+    default: 50
   opentsdb.metric_prefix:
     description: "Text which will be prepended to each metric name submitted to opentsdb"
     default: "opentsdb.nozzle."
+  opentsdb.use_telnet_api:
+    description: "If set to true, metrics will be sent to OpenTSDB over the Telnet API"
+    default: false
   uaa.url:
     description: "URL for the UAA server"
   uaa.username:

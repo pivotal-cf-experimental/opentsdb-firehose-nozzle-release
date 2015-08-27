@@ -1,8 +1,8 @@
 ---
 meta:
-  availability_zone: ap-northeast-1a 
+  availability_zone: ap-northeast-1a
 
-name: XXXX 
+name: XXXX
 director_uuid: XXXX
 
 networks:
@@ -29,12 +29,14 @@ properties:
     api_url: http://opentsdb.XXX.com/api
     flush_duration_seconds: 15
     metric_prefix: opentsdb.nozzle.
+    use_telnet_api: false
+    max_buffer_size: 50
 
   uaa:
     url: https://uaa.XXX.com
     username: xxx
     password: xxx
-  
+
   nozzle:
     insecure_ssl_skip_verify: true
     subscription_id: opentsdb-nozzle
