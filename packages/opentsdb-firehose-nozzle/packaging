@@ -4,8 +4,8 @@ export GOROOT=$(readlink -nf /var/vcap/packages/golang1.4)
 export PATH=$GOROOT/bin:$PATH
 
 cd opentsdb-firehose-nozzle
-
 export GOPATH=$PWD
 
-go install github.com/pivotal-cloudops/opentsdb-firehose-nozzle
-cp -a $PWD/bin/opentsdb-firehose-nozzle ${BOSH_INSTALL_TARGET}
+cd $GOPATH/src/github.com/pivotal-cloudops/opentsdb-firehose-nozzle
+go build
+cp -a opentsdb-firehose-nozzle ${BOSH_INSTALL_TARGET}
