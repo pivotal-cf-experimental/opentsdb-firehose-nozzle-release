@@ -35,3 +35,6 @@ properties:
     description: "Skip verifying SSL certificate"
   nozzle.subscription_id:
     description: "The subscription id to be used for the firehose"
+  nozzle.IdleTimeoutSeconds:
+    description: "The idle timeout for the firehose"
+    default: 60
