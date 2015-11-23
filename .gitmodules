@@ -7,9 +7,6 @@
 [submodule "src/opentsdb-firehose-nozzle/src/github.com/cloudfoundry/noaa"]
 	path = src/opentsdb-firehose-nozzle/src/github.com/cloudfoundry/noaa
 	url = git@github.com:cloudfoundry/noaa.git
-[submodule "src/opentsdb-firehose-nozzle/src/github.com/pivotal-cloudops/opentsdb-firehose-nozzle"]
-	path = src/opentsdb-firehose-nozzle/src/github.com/pivotal-cloudops/opentsdb-firehose-nozzle
-	url = git@github.com:pivotal-cloudops/opentsdb-firehose-nozzle.git
 [submodule "src/opentsdb-firehose-nozzle/src/github.com/cloudfoundry-incubator/uaago"]
 	path = src/opentsdb-firehose-nozzle/src/github.com/cloudfoundry-incubator/uaago
 	url = git@github.com:cloudfoundry-incubator/uaago.git
@@ -19,3 +16,6 @@
 [submodule "src/opentsdb-firehose-nozzle/src/github.com/pivotal-golang/localip"]
 	path = src/opentsdb-firehose-nozzle/src/github.com/pivotal-golang/localip
 	url = git@github.com:pivotal-golang/localip.git
+[submodule "src/opentsdb-firehose-nozzle/src/github.com/pivotal-cf-experimental/opentsdb-firehose-nozzle"]
+	path = src/opentsdb-firehose-nozzle/src/github.com/pivotal-cf-experimental/opentsdb-firehose-nozzle
+	url = git@github.com:pivotal-cf-experimental/opentsdb-firehose-nozzle.git

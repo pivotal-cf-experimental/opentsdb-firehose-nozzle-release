@@ -6,6 +6,6 @@ export PATH=$GOROOT/bin:$PATH
 cd opentsdb-firehose-nozzle
 export GOPATH=$PWD
 
-cd $GOPATH/src/github.com/pivotal-cloudops/opentsdb-firehose-nozzle
+cd $GOPATH/src/github.com/pivotal-cf-experimental/opentsdb-firehose-nozzle
 go build
 cp -a opentsdb-firehose-nozzle ${BOSH_INSTALL_TARGET}
