@@ -1,0 +1,26 @@
+---
+packages:
+- name: golang1.4
+  version: f57ddbc8d55d7a0f08775bf76bb6a27dc98c7ea7
+  fingerprint: f57ddbc8d55d7a0f08775bf76bb6a27dc98c7ea7
+  sha1: 38bde0854ea3fb5bedd67c55e909330437b3b856
+  dependencies: []
+- name: opentsdb-firehose-nozzle
+  version: fd3b2c8e5dd372e4243bce7045f3e9e58413fb60
+  fingerprint: fd3b2c8e5dd372e4243bce7045f3e9e58413fb60
+  sha1: 98b46143fe0eaff7b4a04d731eefd8ee74d067a5
+  dependencies:
+  - golang1.4
+jobs:
+- name: opentsdb-firehose-nozzle
+  version: 6140b9e7ad65881baa2bcccf5db618b6e631c1bc
+  fingerprint: 6140b9e7ad65881baa2bcccf5db618b6e631c1bc
+  sha1: b861beb1fc4e8aa4193ab940e4ccdaf95df159ad
+license:
+  version: 49e2b8aefa6b1ea79d35ce6a4e1a5966f57509af
+  fingerprint: 49e2b8aefa6b1ea79d35ce6a4e1a5966f57509af
+  sha1: 520f0ccb5257cb57b9d927e6d5fcdbc759657b9e
+commit_hash: b47df6cf
+uncommitted_changes: true
+name: opentsdb-firehose-nozzle
+version: '2'
