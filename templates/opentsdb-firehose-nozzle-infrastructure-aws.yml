@@ -2,7 +2,7 @@
 meta:
   <<: (( merge ))
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent 
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent 
     version: latest
   availability_zone: (( merge ))
 
@@ -15,13 +15,13 @@ jobs:
 
 compilation:
   cloud_properties:
-    instance_type: m1.large
+    instance_type: c3.large
 
 resource_pools:
   - name: large 
     cloud_properties:
       availability_zone: (( merge || meta.availability_zone ))
-      instance_type: (( merge || "m1.large" ))
+      instance_type: (( merge || "c3.large" ))
       elbs: ~
 
 networks: (( merge ))
