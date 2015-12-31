@@ -30,7 +30,6 @@ properties:
     flush_duration_seconds: 15
     metric_prefix: opentsdb.nozzle.
     use_telnet_api: false
-    max_buffer_size: 50
 
   uaa:
     url: https://uaa.XXX.com
